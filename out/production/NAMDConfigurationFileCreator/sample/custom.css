@@ -1,0 +1,220 @@
+#help{
+-fx-text-fill: #e1ce7a;
+-fx-focus-color: #00171F;
+}
+
+#help:link{
+-fx-underline: false;
+-fx-text-fill: #e1ce7a;
+-fx-focus-color: #00171F;
+}
+#help:visited{
+-fx-underline: false;
+-fx-text-fill: #e1ce7a;
+-fx-focus-color: #00171F;
+}
+
+#help:hover{
+-fx-underline: false;
+-fx-text-fill: #A59759;
+-fx-focus-color: #00171F;
+}
+
+#help:active{
+-fx-underline: false;
+-fx-text-fill: #e1ce7a;
+-fx-focus-color: #00171F;
+}
+
+
+
+.tab-label {
+    -fx-text-fill: #685F38;
+-fx-font-family: 'Arial';
+
+
+}
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color:  #00171F;
+
+
+}
+
+.tab:selected .tab-label {
+      -fx-text-fill: #e1ce7a;
+}
+
+.tab:active .tab-label {
+      -fx-border-color: #e1ce7a;
+}
+
+.tab{
+-fx-background-color: #00171F;
+  -fx-border-color: #e1ce7a;
+    -fx-text-fill: #000000;
+     -fx-focus-color: #00171F;
+}
+
+
+#button {
+  -fx-background-color: #e1ce7a;
+  -fx-text-fill: #000000;
+}
+
+#button:hover {
+  -fx-background-color: #A59759;
+}
+
+#button:pressed{
+    -fx-background-color: #685F38;
+}
+
+#pathbutton {
+  -fx-background-color: #00171F;
+  -fx-text-fill: #e1ce7a;
+  -fx-border-color: #e1ce7a;
+  -fx-border-radius: 5px;
+}
+
+#pathbutton:hover {
+  -fx-text-fill: #A59759;
+  -fx-border-color: #A59759;
+    -fx-border-radius: 5px;
+}
+
+#pathbutton:pressed{
+    -fx-text-fill: #685F38;
+    -fx-border-color: #685F38;
+      -fx-border-radius: 5px;
+}
+
+.glyph-icon {
+  -fx-text-fill: #e1ce7a;
+
+}
+
+.glyph-icon:hover {
+  -fx-text-fill: #A59759;
+
+}
+
+.glyph-icon:pressed{
+    -fx-text-fill: #685F38;
+}
+
+
+.text-field:error {
+  -fx-text-box-border: red;
+  -fx-focus-color: red ;
+}
+
+.radio-button .radio {
+   -fx-background-color: #00171F;
+   -fx-border-color: #e1ce7a;
+   -fx-border-radius: 10px;
+}
+
+ .dot {
+  -fx-mark-highlight-color: #e1ce7a;
+  -fx-mark-color: #e1ce7a;
+}
+
+.label{
+-fx-text-fill: #A59759;
+}
+
+.combo-box{
+    -fx-background-color: #00171F;
+        -fx-text-fill: #e1ce7a;
+           -fx-border-color: #e1ce7a;
+}
+
+.combo-box .list-cell
+{
+    -fx-background-color: #00171F;
+    -fx-text-fill: #e1ce7a;
+}
+
+.combo-box-popup .list-view
+{
+    -fx-background-color: #00171F;
+
+}
+
+.combo-box .arrow{
+    -fx-background-color: #e1ce7a;
+}
+
+.combo-box:hover {
+           -fx-border-color: #A59759;
+}
+
+.text-area {
+    -fx-background-insets: 0;
+    -fx-background-color: #00171F;
+    -fx-text-fill: #e1ce7a;
+    -fx-border-color: #A59759;
+    -fx-background-radius: 0 ;
+}
+
+.text-area .content {
+    -fx-background-color: #00171F;
+    -fx-background-radius: 0 ;
+}
+
+.text-area:focused .content {
+    -fx-background-color: #00171F;
+    -fx-background-radius: 0 ;
+}
+
+.text-area .content {
+    -fx-padding: 10px;
+    -fx-text-fill: #e1ce7a;
+    -fx-highlight-fill: #e1ce7a;
+    -fx-background-radius: 0 ;
+}
+
+.separator .line {
+    -fx-border-color: #e1ce7a;
+
+}
+
+ .dialog-pane{
+    -fx-background-color: #00171F;
+    -fx-border-color: #e1ce7a;
+
+
+ }
+
+.dialog-pane:header .header-panel {
+  -fx-background-color: #00171F;
+
+}
+.dialog-pane:header .header-panel .label{
+    -fx-font-size: 18px;
+    -fx-font-style: italic;
+    -fx-text-fill: #e1ce7a;
+}
+
+.dialog-pane .button{
+  -fx-background-color: #e1ce7a;
+  -fx-text-fill: #000000;
+ }
+
+.dialog-pane .button:hover{
+  -fx-background-color: #A59759;
+ }
+
+.alert.confirmation.dialog-pane,
+.text-input-dialog.dialog-pane,
+
+
+.alert.information.dialog-pane {
+    -fx-graphic: url("file:///C:/Users/wojta_000/IdeaProjects/NAMDConfigurationFileCreator/src/images/info.png");
+}
+
+.alert.error.dialog-pane {
+    -fx-graphic: url("file:///C:/Users/wojta_000/IdeaProjects/NAMDConfigurationFileCreator/src/images/error.png");
+}
+

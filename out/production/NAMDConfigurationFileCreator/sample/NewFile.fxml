@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.MotionBlur?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #00171F;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.NewFileController">
+   <children>
+      <Text fill="#e1ce7a" layoutX="39.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NEW CONFIGURATION FILE">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Text>
+      <Separator layoutX="39.0" layoutY="40.0" prefHeight="14.0" prefWidth="321.0" stylesheets="@custom.css">
+         <effect>
+            <MotionBlur radius="63.0" />
+         </effect>
+      </Separator>
+      <TabPane id="tab" layoutY="50.0" prefHeight="550.0" prefWidth="400.0" stylesheets="@custom.css" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Required NAMD configuration parameters">
+               <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="426.0" prefWidth="400.0">
+                     <children>
+                        <Text fill="#e1ce7a" layoutX="10.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="numsteps:">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font></Text>
+                        <TextField fx:id="numsteps" layoutX="90.0" layoutY="30.0" prefHeight="25.0" prefWidth="123.0" style="-fx-background-color: #00171F; -fx-border-color: #e1ce7a; -fx-text-fill: #e1ce7a;">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font></TextField>
+                        <Hyperlink id="help" accessibleRole="TOOLTIP" layoutX="220.0" layoutY="30.0" stylesheets="@custom.css" text="?" textFill="#e1ce7a">
+                           <tooltip>
+                              <Tooltip text="The number of simulation timesteps to be performed. An integer greater than 0 is acceptable." />
+                           </tooltip>
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Hyperlink>
+                        <Text fill="#e1ce7a" layoutX="10.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="coordinates:">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font></Text>
+                        <TextField fx:id="coordinates" layoutX="90.0" layoutY="70.0" prefHeight="25.0" prefWidth="123.0" style="-fx-background-color: #00171F; -fx-border-color: #e1ce7a; -fx-text-fill: #e1ce7a;">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font></TextField>
+                        <Button id="pathbutton" layoutX="220.0" layoutY="70.0" mnemonicParsing="false" onAction="#pressHyperlinkPDBfile" prefHeight="25.0" prefWidth="135.0" stylesheets="@custom.css" text="Choose PDB File" textFill="#122380">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView fill="#e1ce7a" glyphName="FOLDER_OPEN" />
+                           </graphic></Button>
+                        <Hyperlink id="help" accessibleRole="TOOLTIP" layoutX="361.0" layoutY="71.0" stylesheets="@custom.css" text="?" textFill="#1b1919">
+                           <tooltip>
+                              <Tooltip text="The number of simulation timesteps to be performed. An integer greater than 0 is acceptable." />
+                           </tooltip>
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Hyperlink>
+                        <TextField fx:id="velocitiesTextField" layoutX="120.0" layoutY="311.0" prefHeight="25.0" prefWidth="111.0" style="-fx-background-color: #00171F; -fx-border-color: #e1ce7a; -fx-text-fill: #e1ce7a;">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font></TextField>
+                        <Text fill="#e1ce7a" layoutX="10.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="structure:">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font></Text>
+                        <TextField fx:id="structure" layoutX="90.0" layoutY="110.0" prefHeight="25.0" prefWidth="123.0" style="-fx-background-color: #00171F; -fx-border-color: #e1ce7a; -fx-text-fill: #e1ce7a;">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font></TextField>
+                        <Button id="pathbutton" layoutX="220.0" layoutY="110.0" mnemonicParsing="false" onAction="#pressHyperlinkPSFfile" prefHeight="25.0" prefWidth="135.0" stylesheets="@custom.css" text="Choose PSF File" textFill="#122380">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView fill="#e1ce7a" glyphName="FOLDER_OPEN" />
+                           </graphic></Button>
+                        <Hyperlink id="help" accessibleRole="TOOLTIP" layoutX="361.0" layoutY="112.0" stylesheets="@custom.css" text="?" textFill="#1b1919">
+                           <tooltip>
+                              <Tooltip text="The X-PLOR format PSF file describing the molecular system to be simulated. Only one value may be specified." />
+                           </tooltip>
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Hyperlink>
+                        <Text fill="#e1ce7a" layoutX="10.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="parameters:">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font></Text>
+                        <TextField fx:id="parameters" layoutX="90.0" layoutY="150.0" prefHeight="25.0" prefWidth="123.0" style="-fx-background-color: #00171F; -fx-border-color: #e1ce7a; -fx-text-fill: #e1ce7a;">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font></TextField>
+                        <Button id="pathbutton" layoutX="220.0" layoutY="150.0" mnemonicParsing="false" onAction="#pressHyperlinkCharmmfile" prefHeight="25.0" prefWidth="135.0" stylesheets="@custom.css" text="Choose CHARMM File" textFill="#122380">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView fill="#e1ce7a" glyphName="FOLDER_OPEN" />
+                           </graphic></Button>
+                        <Hyperlink id="help" accessibleRole="TOOLTIP" layoutX="361.0" layoutY="152.0" stylesheets="@custom.css" text="?" textFill="#1b1919">
+                           <tooltip>
+                              <Tooltip text="A CHARMM19, CHARMM22, or CHARMM27 parameter file that defines all or part of the parameters necessary for the molecular system to be simulated. At least one parameter file must be specified for each simulation." />
+                           </tooltip>
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Hyperlink>
+                        <Text fill="#e1ce7a" layoutX="10.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="exclude:">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font></Text>
+                        <ComboBox fx:id="ComboBox" layoutX="90.0" layoutY="190.0" prefHeight="25.0" prefWidth="123.0" promptText="Select Value" />
+                        <Hyperlink id="help" accessibleRole="TOOLTIP" layoutX="220.0" layoutY="192.0" stylesheets="@custom.css" text="?" textFill="#1b1919">
+                           <tooltip>
+                              <Tooltip text="This parameter specifies which pairs of bonded atoms should be excluded from non-bonded interactions." />
+                           </tooltip>
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Hyperlink>
+                        <Text fill="#e1ce7a" layoutX="10.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="outputname: ">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font></Text>
+                        <TextField fx:id="outputname" layoutX="90.0" layoutY="230.0" prefHeight="25.0" prefWidth="123.0" style="-fx-background-color: #00171F; -fx-border-color: #e1ce7a; -fx-text-fill: #e1ce7a;">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font></TextField>
+                        <Hyperlink id="help" accessibleRole="TOOLTIP" layoutX="220.0" layoutY="232.0" stylesheets="@custom.css" text="?" textFill="#1b1919">
+                           <tooltip>
+                              <Tooltip text="At the end of every simulation, NAMD writes two files, one containing the final coordinates and another containing the final velocities of all atoms in the simulation." />
+                           </tooltip>
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Hyperlink>
+                        <RadioButton fx:id="temperature" layoutX="10.0" layoutY="275.0" mnemonicParsing="false" selected="true" text="temperature:" textFill="#e1ce7a">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="oneOfThreeParameters" />
+                           </toggleGroup>
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </RadioButton>
+                        <TextField fx:id="temperatureTextField" layoutX="120.0" layoutY="271.0" prefHeight="25.0" prefWidth="111.0" style="-fx-background-color: #00171F; -fx-border-color: #e1ce7a; -fx-text-fill: #e1ce7a;">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font></TextField>
+                        <Hyperlink id="help" accessibleRole="TOOLTIP" layoutX="233.0" layoutY="273.0" stylesheets="@custom.css" text="?" textFill="#1b1919">
+                           <tooltip>
+                              <Tooltip text="Initial temperature value for the system." />
+                           </tooltip>
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Hyperlink>
+                        <RadioButton fx:id="binvelocities" layoutX="10.0" layoutY="355.0" mnemonicParsing="false" text="binvelocities:" textFill="#e1ce7a" toggleGroup="$oneOfThreeParameters">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font></RadioButton>
+                        <Button id="pathbutton" layoutX="240.0" layoutY="311.0" mnemonicParsing="false" onAction="#pressHyperlinkPSFfilevelocities" prefHeight="25.0" prefWidth="135.0" stylesheets="@custom.css" text="Choose PSF File" textFill="#122380">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView fill="#e1ce7a" glyphName="FOLDER_OPEN" />
+                           </graphic></Button>
+                        <Hyperlink id="help" accessibleRole="TOOLTIP" layoutX="379.0" layoutY="313.0" stylesheets="@custom.css" text="?" textFill="#1b1919">
+                           <tooltip>
+                              <Tooltip text="The PDB file containing the initial velocities for all atoms in the simulation." />
+                           </tooltip>
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Hyperlink>
+                        <RadioButton fx:id="velocities" layoutX="11.0" layoutY="315.0" mnemonicParsing="false" text="velocities" textFill="#e1ce7a" toggleGroup="$oneOfThreeParameters">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font></RadioButton>
+                        <TextField fx:id="binvelocitiesTextField" layoutX="120.0" layoutY="351.0" prefHeight="25.0" prefWidth="111.0" style="-fx-background-color: #00171F; -fx-border-color: #e1ce7a; -fx-text-fill: #e1ce7a;">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font></TextField>
+                        <Hyperlink id="help" accessibleRole="TOOLTIP" layoutX="379.0" layoutY="353.0" stylesheets="@custom.css" text="?" textFill="#1b1919">
+                           <tooltip>
+                              <Tooltip text="The binary file containing initial velocities for all atoms in the simulation" />
+                           </tooltip>
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Hyperlink>
+                        <Button id="pathbutton" layoutX="240.0" layoutY="351.0" mnemonicParsing="false" onAction="#pressHyperlinkPSFfilebinvelocities" prefHeight="25.0" prefWidth="135.0" stylesheets="@custom.css" text="Choose PSF File" textFill="#122380">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView fill="#e1ce7a" glyphName="FOLDER_OPEN" />
+                           </graphic></Button>
+                        <Button id="button" layoutX="108.0" layoutY="477.0" mnemonicParsing="false" onAction="#pressButtonSaveInEdit" prefHeight="30.0" prefWidth="80.0" stylesheets="@custom.css" text="Save" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView glyphName="SAVE" />
+                           </graphic>
+                        </Button>
+                        <Button id="button" layoutX="213.0" layoutY="477.0" mnemonicParsing="false" onAction="#pressButtonBackInEdit" prefHeight="30.0" prefWidth="80.0" stylesheets="@custom.css" text="Back" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView glyphName="ARROW_LEFT" />
+                           </graphic>
+                        </Button>
+                        <Separator layoutX="40.0" layoutY="386.0" prefHeight="67.0" prefWidth="321.0" stylesheets="@custom.css">
+                           <effect>
+                              <MotionBlur radius="63.0" />
+                           </effect>
+                        </Separator>
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+          <Tab onSelectionChanged="#onSelectionChangedAdditionalParametersTab" text="Additional parameters">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextArea fx:id="additionalParameters" layoutX="10.0" layoutY="125.0" prefHeight="347.0" prefWidth="380.0" style="-fx-control-inner-background: #00171F;;" />
+                        <GridPane layoutX="10.0" prefHeight="101.0" prefWidth="380.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Text fill="#e1ce7a" strokeType="OUTSIDE" strokeWidth="0.0" text="numsteps">
+                                 <font>
+                                    <Font name="Arial" size="10.0" />
+                                 </font>
+                              </Text>
+                              <Label fx:id="showNumsteps" prefHeight="17.0" prefWidth="72.0" text="Label" textFill="#e1ce7a" GridPane.columnIndex="1">
+                                 <tooltip>
+                                    <Tooltip fx:id="showNumstepsTooltip" text="Empty Tooltip" />
+                                 </tooltip>
+                                 <font>
+                                    <Font name="Arial" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Text fill="#e1ce7a" strokeType="OUTSIDE" strokeWidth="0.0" text="coordinates" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Arial" size="10.0" />
+                                 </font></Text>
+                              <Label fx:id="showCoordinates" prefHeight="17.0" prefWidth="72.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <tooltip>
+                                    <Tooltip fx:id="showCoordinatesTooltip" text="Empty Tooltip" />
+                                 </tooltip>
+                                 <font>
+                                    <Font name="Arial" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Text fill="#e1ce7a" strokeType="OUTSIDE" strokeWidth="0.0" text="structure" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Arial" size="10.0" />
+                                 </font></Text>
+                              <Label fx:id="showStructure" prefHeight="17.0" prefWidth="72.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <tooltip>
+                                    <Tooltip fx:id="showStructureTooltip" text="Empty Tooltip" />
+                                 </tooltip>
+                                 <font>
+                                    <Font name="Arial" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Text fill="#e1ce7a" strokeType="OUTSIDE" strokeWidth="0.0" text="parameters" GridPane.columnIndex="2">
+                                 <font>
+                                    <Font name="Arial" size="10.0" />
+                                 </font>
+                              </Text>
+                              <Label fx:id="showParameters" prefHeight="15.0" prefWidth="72.0" text="Label" GridPane.columnIndex="3">
+                                 <font>
+                                    <Font name="Arial" size="10.0" />
+                                 </font>
+                                 <tooltip>
+                                    <Tooltip fx:id="showParametersTooltip" text="Empty Tooltip" />
+                                 </tooltip>
+                              </Label>
+                              <Text fill="#e1ce7a" strokeType="OUTSIDE" strokeWidth="0.0" text="exclude" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Arial" size="10.0" />
+                                 </font>
+                              </Text>
+                              <Label fx:id="showExclude" prefHeight="15.0" prefWidth="72.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Arial" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Text fill="#e1ce7a" strokeType="OUTSIDE" strokeWidth="0.0" text="outputname" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Arial" size="10.0" />
+                                 </font>
+                              </Text>
+                              <Label fx:id="showOutputname" prefHeight="15.0" prefWidth="72.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Arial" size="10.0" />
+                                 </font>
+                                 <tooltip>
+                                    <Tooltip fx:id="showOutputnameTooltip" text="Empty Tooltip" />
+                                 </tooltip>
+                              </Label>
+                              <Label fx:id="showTemperature" text="Label" GridPane.columnIndex="5">
+                                 <font>
+                                    <Font name="Arial" size="10.0" />
+                                 </font>
+                                 <tooltip>
+                                    <Tooltip fx:id="showTemperatureTooltip" text="Empty Tooltip" />
+                                 </tooltip>
+                              </Label>
+                              <Label fx:id="showVelocities" text="Label" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Arial" size="10.0" />
+                                 </font>
+                                 <tooltip>
+                                    <Tooltip fx:id="showVelocitiesTooltip" text="Empty Tooltip" />
+                                 </tooltip>
+                              </Label>
+                              <Label fx:id="showBinvelocities" text="Label" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Arial" size="10.0" />
+                                 </font>
+                                 <tooltip>
+                                    <Tooltip fx:id="showBinvelocitiesTooltip" text="Empty Tooltip" />
+                                 </tooltip>
+                              </Label>
+                              <Text fill="#e1ce7a" strokeType="OUTSIDE" strokeWidth="0.0" text="temperature" GridPane.columnIndex="4">
+                                 <font>
+                                    <Font name="Arial" size="10.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#e1ce7a" strokeType="OUTSIDE" strokeWidth="0.0" text="velocitie" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Arial" size="10.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#e1ce7a" strokeType="OUTSIDE" strokeWidth="0.0" text="binvelocities" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Arial" size="10.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </GridPane>
+                        <Text fill="#e1ce7a" layoutX="115.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Each parameter write in new line">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font></Text>
+                        <Button id="button" layoutX="108.0" layoutY="477.0" mnemonicParsing="false" onAction="#pressButtonSaveInEdit" prefHeight="30.0" prefWidth="80.0" stylesheets="@custom.css" text="Save" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView glyphName="SAVE" />
+                           </graphic>
+                        </Button>
+                        <Button id="button" layoutX="213.0" layoutY="477.0" mnemonicParsing="false" onAction="#pressButtonBackInEdit" prefHeight="30.0" prefWidth="80.0" stylesheets="@custom.css" text="Back" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView glyphName="ARROW_LEFT" />
+                           </graphic>
+                        </Button>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
